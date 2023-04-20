@@ -3983,16 +3983,16 @@ public class Service {
         Util.log("INIT ZAMASU XONG MAP " + Server.gI().maps[97].template.name + ", " + IDZONE);
     }
     public void initBillWhis() {
-        int IDZONE = Util.nextInt(0, Server.gI().maps[5].area.length);
+        int IDZONE = Util.nextInt(0, Server.gI().maps[47].area.length);
         Boss _Bill = new Boss(529, (byte)49, (short)354, (short)288);
-        Server.gI().maps[5].area[IDZONE].bossMap.add(_Bill);
-        Server.gI().maps[5].area[IDZONE].loadBossNoPet(_Bill);
-        sendThongBaoServer("BOSS " + _Bill.name + " vừa xuất hiện tại " + Server.gI().maps[5].template.name);
+        Server.gI().maps[47].area[IDZONE].bossMap.add(_Bill);
+        Server.gI().maps[47].area[IDZONE].loadBossNoPet(_Bill);
+        sendThongBaoServer("BOSS " + _Bill.name + " vừa xuất hiện tại " + Server.gI().maps[47].template.name);
         Boss _Whis = new Boss(530, (byte)50, (short)305, (short)288);
-        Server.gI().maps[5].area[IDZONE].bossMap.add(_Whis);
-        Server.gI().maps[5].area[IDZONE].loadBossNoPet(_Whis);
-        sendThongBaoServer("BOSS " + _Whis.name + " vừa xuất hiện tại " + Server.gI().maps[5].template.name);
-        Util.log("INIT initBillWhis XONG MAP " + Server.gI().maps[5].template.name + ", " + IDZONE);
+        Server.gI().maps[47].area[IDZONE].bossMap.add(_Whis);
+        Server.gI().maps[47].area[IDZONE].loadBossNoPet(_Whis);
+        sendThongBaoServer("BOSS " + _Whis.name + " vừa xuất hiện tại " + Server.gI().maps[47].template.name);
+        Util.log("INIT initBillWhis XONG MAP " + Server.gI().maps[47].template.name + ", " + IDZONE);
     }
     //NGOC RONG SAO DEN
     public void upHPPlayer(Player p) {

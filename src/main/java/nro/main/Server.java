@@ -322,8 +322,10 @@ public class Server {
                     Service.gI().initXenVoDai();
                     //INIT CHILLED
                     Service.gI().initChilled();
+                    //Init zamasu
                     Service.gI().initZamasu();
-//                    Service.gI().initBillWhis();
+                    //init bill whis
+                    Service.gI().initBillWhis();
                     timerFIDE.cancel();
                 };
             };
