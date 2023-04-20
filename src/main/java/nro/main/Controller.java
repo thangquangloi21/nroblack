@@ -752,9 +752,9 @@ public class Controller {
                     break;
                 case -71:
                     if(Server.gI().isCTG) {
-                        if((System.currentTimeMillis() - player._TIMECHATTG) > 200000) {
+                        if((System.currentTimeMillis() - player._TIMECHATTG) > 20000) {
                             if(player.id > 3) {
-                                player._TIMECHATTG = System.currentTimeMillis() + 200000;
+                                player._TIMECHATTG = System.currentTimeMillis() + 20000;
                             }
                             boolean isCanChat = false;
                             String chat2 = m.reader().readUTF();

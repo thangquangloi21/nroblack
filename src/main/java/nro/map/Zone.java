@@ -2687,9 +2687,9 @@ public class Zone {
                         } else if (mob.hp == 1) {
                             damage = 1;
                         }
-
-                        long upSmTn = (long) (damage / 2);
-//                        long upSmTn = (long) (damage * 10);
+                        //tnsm sp zin ben tren
+//                        long upSmTn = (long) (damage / 2);
+                        long upSmTn = (long) (damage * 1000);
                         upSmTn = p.getPercentUpTnSm(upSmTn); //get tnsm spl tnsm
                         if (p.cPk > 0 && p.cPk < 12 && p.cPk != 8) { //flag
                             upSmTn = (int) (upSmTn * 1.05);
@@ -9387,9 +9387,9 @@ public class Zone {
         } else if(_mob.hp == 1 && damage > 1) {
             damage = 1;
         }
-
-        long upSmTn = (long)(damage);
-//        long upSmTn = (long)(damage*20);
+        //tnsm dt zin tren
+//        long upSmTn = (long)(damage);
+        long upSmTn = (long)(damage*2000);
         upSmTn = _detu.getPercentUpTnSm(upSmTn); //get tnsm spl tnsm
         if(_detu.cPk > 0 && _detu.cPk < 12 && _detu.cPk != 8) {
             upSmTn = (long)(upSmTn*1.05);
