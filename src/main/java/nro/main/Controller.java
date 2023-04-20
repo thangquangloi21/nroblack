@@ -1884,7 +1884,7 @@ public class Controller {
                         } else {
                             if(System.currentTimeMillis() >= player.tSwapZone) {
                                 if(player.id > 3) {
-                                    player.tSwapZone = System.currentTimeMillis() + 30000;
+                                    player.tSwapZone = System.currentTimeMillis() + 5000;
                                 }
                                 player.zone.selectUIZone(player, m);
                             } else {
@@ -2651,7 +2651,7 @@ public class Controller {
 //                                    RadaCardService.gI().sendAuraCard(player, (short)1);
                                     RadaCardService.gI().sendAuraCard(player, (short)0);
                                 }
-                                player.sendAddchatYellow("Chào mừng " + player.name +" đến với Nro Crazy");
+                                player.sendAddchatYellow("Chào mừng " + player.name +" đến với Nro Black");
                                 PlayerManger.gI().put(session);
                                 PlayerManger.gI().put(player);
                                 session.player = player;
@@ -2731,7 +2731,7 @@ public class Controller {
                         Service.gI().updateVersion(session);
                         Service.gI().itemBg(session, 0);
                         sendInfo(session);
-                        session.player.sendAddchatYellow("Chào mừng " + session.player.name +" đến với Nro Crazy");
+                        session.player.sendAddchatYellow("Chào mừng " + session.player.name +" đến với Nro black");
                         PlayerManger.gI().put(session);
                         PlayerManger.gI().put(session.player);
     //                    session.player = session.player;
