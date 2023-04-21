@@ -1244,7 +1244,7 @@ public class Controller {
 //                    Service.gI().sendMessage(_session, -29, "1630679748828_-29_2_r"); // -29
                     m = new Message(-29);
                     m.writer().writeByte(2);
-                    m.writer().writeUTF("Black :20.239.67.247:14445:0,0,0");
+                    m.writer().writeUTF("Black :104.208.80.71:14445:0,0,0");
                     m.writer().writeByte(1);
                     m.writer().flush();
                     _session.sendMessage(m);

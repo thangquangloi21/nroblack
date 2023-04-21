@@ -129,7 +129,7 @@ public class MainManager {
             this.mysql_pass = (String) configMap.get("mysql-password");
 //            this.mysql_pass = "AAbbcc123abc";
         } else {
-            this.mysql_pass = "";
+            this.mysql_pass = "taokhongbiet";
         }
 
         if (configMap.containsKey("mysql-database")) {

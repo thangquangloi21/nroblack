@@ -23,7 +23,7 @@ public class DBService {
 //            String url = "jdbc:mysql://103.166.182.237:3306/server2";
             String user = "root";
 //            String user = "foouser4";
-            String password = "";
+            String password = "taokhongbiet";
 //            String password = "AAbbcc123abc";
 
             // create a connection to the database

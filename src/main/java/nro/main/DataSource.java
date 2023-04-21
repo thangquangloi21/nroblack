@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DataSource {
     private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/black";
     private static final String USER = "root";
-    private static final String PASS = "";
+    private static final String PASS = "taokhongbiet";
     private static final HikariConfig config = new HikariConfig();
     private static final HikariDataSource ds;
 
