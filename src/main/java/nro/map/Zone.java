@@ -2526,13 +2526,13 @@ public class Zone {
                     //GIAM TNSM
                     upSmTnDCTT = (long) (upSmTnDCTT / 2);
                     if (p.power >= 40000000000L) {
-                        upSmTnDCTT = (long) (upSmTnDCTT / 5);
+                        upSmTnDCTT = (long) (upSmTnDCTT / 50);
                     } else if (p.power >= 50000000000L) {
-                        upSmTnDCTT = (long) (upSmTnDCTT / 7);
+                        upSmTnDCTT = (long) (upSmTnDCTT / 70);
                     } else if (p.power >= 60000000000L) {
-                        upSmTnDCTT = (long) (upSmTnDCTT / 8);
+                        upSmTnDCTT = (long) (upSmTnDCTT / 80);
                     } else if (p.power >= 70000000000L) {
-                        upSmTnDCTT = (long) (upSmTnDCTT / 10);
+                        upSmTnDCTT = (long) (upSmTnDCTT / 100);
                     }
                     if (mob.template.tempId == 0) {
                         damageDCTT = 10;
@@ -2689,7 +2689,7 @@ public class Zone {
                         }
                         //tnsm sp zin ben tren
 //                        long upSmTn = (long) (damage / 2);
-                        long upSmTn = (long) (damage * 1000);
+                        long upSmTn = (long) (damage / 2);
                         upSmTn = p.getPercentUpTnSm(upSmTn); //get tnsm spl tnsm
                         if (p.cPk > 0 && p.cPk < 12 && p.cPk != 8) { //flag
                             upSmTn = (int) (upSmTn * 1.05);
@@ -2704,11 +2704,11 @@ public class Zone {
                         //END NOI TAI TANG TNSM
                         upSmTn = (long) (upSmTn * 20);
                         if (p.power >= 40000000000L) {
-                            upSmTn = (long) (upSmTn * 5);
+                            upSmTn = (long) (upSmTn * 50);
                         } else if (p.power >= 50000000000L) {
-                            upSmTn = (long) (upSmTn * 7);
+                            upSmTn = (long) (upSmTn * 70);
                         } else if (p.power >= 60000000000L) {
-                            upSmTn = (long) (upSmTn * 8);
+                            upSmTn = (long) (upSmTn * 80);
                         } else if (p.power >= 70000000000L) {
                             upSmTn = (long) (upSmTn * 10);
                         }
@@ -3129,10 +3129,10 @@ public class Zone {
                         if (p.noiTai.id != 0 && p.noiTai.idSkill == (byte) (-3)) {
                             upSmTn += (long) (upSmTn * Util.getPercentDouble((int) p.noiTai.param));
                         }
-                        //MAP NGU HANH SON, TNSM x2
-//                        if (p.map.id >= 122 && p.map.id <= 124) {
-//                            upSmTn = upSmTn * 2;
-//                        }
+//                        MAP NGU HANH SON, TNSM x2
+                        if (p.map.id >= 122 && p.map.id <= 124) {
+                            upSmTn = upSmTn * 2;
+                        }
                         //MAP THANH DIA GIAM TNSM
                         if (p.map.id >= 156 && p.map.id <= 159) {
                             upSmTn = (long) (upSmTn / 5);
@@ -9389,7 +9389,7 @@ public class Zone {
         }
         //tnsm dt zin tren
 //        long upSmTn = (long)(damage);
-        long upSmTn = (long)(damage*2000);
+        long upSmTn = (long)(damage*100);
         upSmTn = _detu.getPercentUpTnSm(upSmTn); //get tnsm spl tnsm
         if(_detu.cPk > 0 && _detu.cPk < 12 && _detu.cPk != 8) {
             upSmTn = (long)(upSmTn*1.05);

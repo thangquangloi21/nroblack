@@ -3535,8 +3535,8 @@ public class Service {
         if(_item == null) {
             return;
         }
-        if(_item.template.id >= 17 && _item.template.id <=20) { //4s den 7s
-//        if(_item.template.id >= 15 && _item.template.id <=20) { //2s den 7s
+//        if(_item.template.id >= 17 && _item.template.id <=20) { //4s den 7s
+        if(_item.template.id >= 15 && _item.template.id <=20) { //2s den 7s
             if(_item.quantity >= 7) {
                 Message m = null;
                 try {
@@ -3571,7 +3571,7 @@ public class Service {
         if(_ngocRong == null) {
             return;
         }
-        if((System.currentTimeMillis() - _player._timeDapDo) >= 1000 && _player._checkDapDo && _ngocRong.template.id >= 17 && _ngocRong.template.id <=20 && _ngocRong.quantity >= 7) {
+        if((System.currentTimeMillis() - _player._timeDapDo) >= 1000 && _player._checkDapDo && _ngocRong.template.id >= 15 && _ngocRong.template.id <=20 && _ngocRong.quantity >= 7) {
             _player._timeDapDo = System.currentTimeMillis();
             _player._checkDapDo = false;
             if(_ngocRong != null) {
