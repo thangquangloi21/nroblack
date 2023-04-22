@@ -18,7 +18,7 @@ public class Session {
         public Sender() {
             sendingMessage = new ArrayList<>();
         }
-
+        //nhu db
         public void AddMessage(Message message) {
             sendingMessage.add(message);
         }
