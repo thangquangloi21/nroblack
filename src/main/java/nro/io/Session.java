@@ -202,9 +202,6 @@ public class Session {
     }
 
     public void sendSessionKey() {
-        if (sendThread == null || !sendThread.isAlive()) {
-            sendThread.start();
-        } else {
             Message msg = new Message(-27);
             try {
                 msg.writer().writeByte(keys.length);
@@ -221,7 +218,6 @@ public class Session {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
     }
 
 
