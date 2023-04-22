@@ -4593,9 +4593,9 @@ public class Service {
                             }
                         }
                         for(int j = 0; j < Server.gI().maps[i].area.length; j++) {
-//                            if(Server.gI().maps[i].area[j].getMobByTempID(70) != null) {
-//                                Server.gI().maps[i].area[j].refreshMob(70);
-//                            }
+                            if(Server.gI().maps[i].area[j].getMobByTempID(70) != null) {
+                                Server.gI().maps[i].area[j].refreshMob(70);
+                            }
                             if(indexM != -1) {
                                 Server.gI().maps[i].area[j].refreshMob(indexM);
                             }
@@ -5094,9 +5094,9 @@ public class Service {
                     updateBagNew(_p.session, player.id, idBag);
                     //GET BAG SAU LUNG
                     ClanService.gI().getBagBangNew(_p.session, idBag);
-        //            if(_p.id != player.id) {
-        //                ClanService.gI().loadUpdateInfoMember(_p.session, player);
-        //            }
+                    if(_p.id != player.id) {
+                        ClanService.gI().loadUpdateInfoMember(_p.session, player);
+                    }
                 }
             }
         }
@@ -5479,11 +5479,11 @@ public class Service {
                 }
             }
             if(p.gender == (byte)1) {
-//                p.ItemBody[6].timeGLT += 400;
-                p.ItemBody[6].timeGLT += 800;
+                p.ItemBody[6].timeGLT += 400;
+//                p.ItemBody[6].timeGLT += 800;
             } else {
-//                p.ItemBody[6].timeGLT += 500;
-                p.ItemBody[6].timeGLT += 1000;
+                p.ItemBody[6].timeGLT += 500;
+//                p.ItemBody[6].timeGLT += 1000;
             }
             p.ItemBody[6].cUpTimeGLT = (byte)(p.ItemBody[6].cUpTimeGLT + 1) > (byte)120 ? (byte)120 : (byte)(p.ItemBody[6].cUpTimeGLT + 1);
 //            Util.log("CUPTIME GLT: " + p.ItemBody[6].cUpTimeGLT + ", TIME: " + p.ItemBody[6].timeGLT);

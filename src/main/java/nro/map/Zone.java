@@ -2702,7 +2702,7 @@ public class Zone {
                             upSmTn += (long) (upSmTn * Util.getPercentDouble((int) p.noiTai.param));
                         }
                         //END NOI TAI TANG TNSM
-                        upSmTn = (long) (upSmTn * 20);
+                        upSmTn = (long) (upSmTn * 10);
                         if (p.power >= 40000000000L) {
                             upSmTn = (long) (upSmTn * 50);
                         } else if (p.power >= 50000000000L) {
@@ -2710,7 +2710,7 @@ public class Zone {
                         } else if (p.power >= 60000000000L) {
                             upSmTn = (long) (upSmTn * 80);
                         } else if (p.power >= 70000000000L) {
-                            upSmTn = (long) (upSmTn * 10);
+                            upSmTn = (long) (upSmTn * 1000);
                         }
                         //MAP NGU HANH SON, TNSM x2
 //                        if (p.map.id >= 122 && p.map.id <= 124) {
@@ -2877,13 +2877,11 @@ public class Zone {
                                     itemROI.item = _ITEMKICHHOAT;
                                     itemDrop.add(itemROI);
                                     itemsMap.addAll(itemDrop);
+                                    //chinh ti le cskb
                                 } else if (percentDrop < 3 && map.MapCell() && p.useMayDoCapsule) { //ITEM ROT KHI DUNG RADA DO CAPSULE
 //                                int idItemNotSell2[] = {16,17,18,19,20, 441,442,443,444,445,446,447, 76,188,189,190, 225,16,17,18,19,20, 441,442,443,444,445,446,447, 76,188,189,190, 225, 380};
-                                    int idItemNotSell2[] = {17, 225, 18, 19, 20, 441, 442, 443, 444, 445, 446, 447, 17, 188, 189, 190, 225, 17, 225, 18, 19, 20, 441, 442, 443, 444, 445, 446, 447, 76, 188, 189, 190, 225, 380};
-                                    int id = Util.nextInt(0, 35);
-                                    if (id >= 30) {
-                                        id = 34;
-                                    }
+                                    int idItemNotSell2[] = {17,380};
+                                    int id = Util.nextInt(0, 2);
                                     Item itemMap = ItemSell.getItemNotSell(idItemNotSell2[id]);
                                     ItemMap item = new ItemMap();
                                     item.playerId = p.id;
