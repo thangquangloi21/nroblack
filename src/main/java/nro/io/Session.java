@@ -132,6 +132,23 @@ public class Session {
     private final Sender sender = new Sender();
     public static Thread collectorThread;
     public static Thread sendThread;
+//    private void sendThread() {
+//        try {
+//            while (socket != null && socket.isConnected()) {
+//                byte[] data = dataToSend.poll();
+//                if (data != null) {
+//                    OutputStream outputStream = socket.getOutputStream();
+//                    outputStream.write(data);
+//                    outputStream.flush();
+//                } else {
+//                    Thread.sleep(1);
+//                }
+//            }
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+
     public byte zoomLevel;
     private final Controller controller;
     private DataInputStream dis;
@@ -185,23 +202,28 @@ public class Session {
     }
 
     public void sendSessionKey() {
-        Message msg = new Message(-27);
-        try {
-            msg.writer().writeByte(keys.length);
-            msg.writer().writeByte(keys[0]);
-            for (int i = 1; i < keys.length; i++) {
-                msg.writer().writeByte(keys[i] ^ keys[i - 1]);
+        if (sendThread == null || !sendThread.isAlive()) {
+            sendThread.start();
+        } else {
+            Message msg = new Message(-27);
+            try {
+                msg.writer().writeByte(keys.length);
+                msg.writer().writeByte(keys[0]);
+                for (int i = 1; i < keys.length; i++) {
+                    msg.writer().writeByte(keys[i] ^ keys[i - 1]);
+                }
+                doSendMessage(msg);
+                msg.cleanup();
+                sendKeyComplete = true;
+                if (!sendThread.isAlive()) {
+                    sendThread.start();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            doSendMessage(msg);
-            msg.cleanup();
-            sendKeyComplete = true;
-            if(!sendThread.isAlive()) {
-                sendThread.start();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
+
 
     public void sendMessage(Message message)
     {

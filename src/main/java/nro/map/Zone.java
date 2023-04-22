@@ -4082,8 +4082,8 @@ public class Zone {
                                     addItemToMap(itemM, p.id, _bTarget.x, _bTarget.y);
                                 }
                             }
-                        } else if(_bTarget._typeBoss == (byte)49 || _bTarget._typeBoss == (byte)50) {//billwhis rot ruong
-                            ItemMap itemM = newItemMAP(1055, p.id, _bTarget.x, _bTarget.y);
+                        } else if(_bTarget._typeBoss == (byte)49 || _bTarget._typeBoss == (byte)50) {//bill whis roi ruong
+                            ItemMap itemM = newItemMAP(14, p.id, _bTarget.x, _bTarget.y);
                             if(itemM != null) {
                                 addItemToMap(itemM, p.id, _bTarget.x, _bTarget.y);
                             }
@@ -4291,21 +4291,21 @@ public class Zone {
                 }
                 //END CHECK SET KICH HOAT SONGOKU
                 //CHECK CAI TRANG X3,X4 CHUONG MOI PHUT
-//                if((System.currentTimeMillis() >= p.timeX3X4) && p.isChuongX3X4) {
-//                    p.isChuongX3X4 = false;
-//                }
-//                if(p.ItemBody[5] != null && (p.ItemBody[5].template.id == 710 || p.ItemBody[5].template.id == 711) && !p.isChuongX3X4 && (System.currentTimeMillis() >= p.timeX3X4)) {
-//                    int perX3X4 = Util.nextInt(0, 10);
-//                    if(perX3X4 <= 1) {
-//                        p.isChuongX3X4 = true;
-//                        p.timeX3X4 = System.currentTimeMillis() + 60000;
-//                        if(p.ItemBody[5].template.id == 710) {
-//                            damage = damage*3;
-//                        } else if (p.ItemBody[5].template.id == 711){
-//                            damage = damage*4;
-//                        }
-//                    }
-//                }
+                if((System.currentTimeMillis() >= p.timeX3X4) && p.isChuongX3X4) {
+                    p.isChuongX3X4 = false;
+                }
+                if(p.ItemBody[5] != null && (p.ItemBody[5].template.id == 710 || p.ItemBody[5].template.id == 711) && !p.isChuongX3X4 && (System.currentTimeMillis() >= p.timeX3X4)) {
+                    int perX3X4 = Util.nextInt(0, 10);
+                    if(perX3X4 <= 1) {
+                        p.isChuongX3X4 = true;
+                        p.timeX3X4 = System.currentTimeMillis() + 60000;
+                        if(p.ItemBody[5].template.id == 710) {
+                            damage = damage*3;
+                        } else if (p.ItemBody[5].template.id == 711){
+                            damage = damage*4;
+                        }
+                    }
+                }
                 //CHECK TANG TIME GIAP LUYEN TAP
                 Service.gI().upTimeGLT(p);
                 //BOSS BROLY
@@ -4676,7 +4676,7 @@ public class Zone {
                                 Service.gI().sendThongBaoServer(p.name + " vừa tiêu diệt " + _bTarget.name + " mọi người đều ngưỡng mộ");
                                 ItemMap item = dropItemGOD(p, _bTarget.x, _bTarget.y);
 
-                                //ADD ITEM TO MAP
+                                //ADD ITEM TO MAP boss roi do
                                 if(item != null) {
                                     try {
                                         itemDrop.add(item);
@@ -6508,30 +6508,30 @@ public class Zone {
                                 };
                             };
                             hiruregarn.schedule(tthiruregarn, 10000);
-//                        } else {
-//                            Message m = null;
-//                            try {
-//                                m = new Message(-73);
-//                                m.writer().writeByte((byte)mob.template.tempId);
-//                                m.writer().writeByte((byte)0);
-//                                m.writer().flush();
-//                                for(Player p: players) {
-//                                    if(p.session != null && p != null) {
-//                                        p.session.sendMessage(m);
-//                                    }
-//                                }
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            } finally {
-//                                if (m != null) {
-//                                    m.cleanup();
-//                                }
-//                            }
-//                            mob.typeHiru = (byte)0;
-//                            Util.log("END HIRU: " + mob.typeHiru);
-//                        }
-                    }
-//                    timerMobAuto.cancel();
+                        } else {
+                            Message m = null;
+                            try {
+                                m = new Message(-73);
+                                m.writer().writeByte((byte)mob.template.tempId);
+                                m.writer().writeByte((byte)0);
+                                m.writer().flush();
+                                for(Player p: players) {
+                                    if(p.session != null && p != null) {
+                                        p.session.sendMessage(m);
+                                    }
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            } finally {
+                                if (m != null) {
+                                    m.cleanup();
+                                }
+                            }
+                            mob.typeHiru = (byte)0;
+                            Util.log("END HIRU: " + mob.typeHiru);
+                        }
+
+                    timerMobAuto.cancel();
                     return;
                 }
                 if(mob.template.tempId == 70) {
@@ -7584,7 +7584,7 @@ public class Zone {
                                                     addItemToMap(itemM, player.id, bossMap.get(i).x, bossMap.get(i).y);
                                                 }
                                             }
-                                        } else if(bossMap.get(i)._typeBoss == (byte)49 || bossMap.get(i)._typeBoss == (byte)50) {//billwhis rot ruong
+                                        } else if(bossMap.get(i)._typeBoss == (byte)49 || bossMap.get(i)._typeBoss == (byte)50) {//billwhis rot gang
                                             ItemMap itemM = newItemMAP(1055, player.id, bossMap.get(i).x, bossMap.get(i).y);
                                             if(itemM != null) {
                                                 addItemToMap(itemM, player.id, bossMap.get(i).x, bossMap.get(i).y);

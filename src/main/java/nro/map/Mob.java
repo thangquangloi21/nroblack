@@ -39,6 +39,7 @@ public class Mob {
         this.xpup = 100000L;
         this.isDie = false;
         this.timeFight = -1L;
+
         
     }
     public static MobTemplate getMob(int id) {
