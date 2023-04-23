@@ -7585,7 +7585,7 @@ public class Zone {
                                                 }
                                             }
                                         } else if(bossMap.get(i)._typeBoss == (byte)49 || bossMap.get(i)._typeBoss == (byte)50) {//billwhis rot gang
-                                            ItemMap itemM = newItemMAP(1055, player.id, bossMap.get(i).x, bossMap.get(i).y);
+                                            ItemMap itemM = newItemMAP(15, player.id, bossMap.get(i).x, bossMap.get(i).y);
                                             if(itemM != null) {
                                                 addItemToMap(itemM, player.id, bossMap.get(i).x, bossMap.get(i).y);
                                             }

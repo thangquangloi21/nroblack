@@ -132,22 +132,6 @@ public class Session {
     private final Sender sender = new Sender();
     public static Thread collectorThread;
     public static Thread sendThread;
-//    private void sendThread() {
-//        try {
-//            while (socket != null && socket.isConnected()) {
-//                byte[] data = dataToSend.poll();
-//                if (data != null) {
-//                    OutputStream outputStream = socket.getOutputStream();
-//                    outputStream.write(data);
-//                    outputStream.flush();
-//                } else {
-//                    Thread.sleep(1);
-//                }
-//            }
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//    }
 
     public byte zoomLevel;
     private final Controller controller;
