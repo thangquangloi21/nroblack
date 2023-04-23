@@ -4016,7 +4016,7 @@ public class Zone {
                         } else if(_bTarget._typeBoss == 4 || _bTarget._typeBoss == 6) {
                             Service.gI().sendThongBaoServer(p.name + " vừa tiêu diệt " + _bTarget.name + " mọi người đều ngưỡng mộ");
                             ItemMap item = dropItemGOD(p, _bTarget.x, _bTarget.y);
-
+                            //3
                             //ADD ITEM TO MAP
                             if(item != null) {
                                 try {
@@ -4082,8 +4082,8 @@ public class Zone {
                                     addItemToMap(itemM, p.id, _bTarget.x, _bTarget.y);
                                 }
                             }
-                        } else if(_bTarget._typeBoss == (byte)49 || _bTarget._typeBoss == (byte)50) {//bill whis roi ruong
-                            ItemMap itemM = newItemMAP(14, p.id, _bTarget.x, _bTarget.y);
+                        } else if(_bTarget._typeBoss == (byte)49 || _bTarget._typeBoss == (byte)50) {//bill whis roi 2s
+                            ItemMap itemM = newItemMAP(15, p.id, _bTarget.x, _bTarget.y);
                             if(itemM != null) {
                                 addItemToMap(itemM, p.id, _bTarget.x, _bTarget.y);
                             }
@@ -4397,7 +4397,7 @@ public class Zone {
                         } else if(_bTarget._typeBoss == 4 || _bTarget._typeBoss == 6) {
                             Service.gI().sendThongBaoServer(p.name + " vừa tiêu diệt " + _bTarget.name + " mọi người đều ngưỡng mộ");
                             ItemMap item = dropItemGOD(p, _bTarget.x, _bTarget.y);
-
+                            //1
                             //ADD ITEM TO MAP
                             if(item != null) {
                                 try {
@@ -4458,7 +4458,7 @@ public class Zone {
                                 }
                             }
                         } else if(_bTarget._typeBoss == (byte)49 || _bTarget._typeBoss == (byte)50) {//billwhis rot ruong
-                            ItemMap itemM = newItemMAP(1055, p.id, _bTarget.x, _bTarget.y);
+                            ItemMap itemM = newItemMAP(15, p.id, _bTarget.x, _bTarget.y);
                             if(itemM != null) {
                                 addItemToMap(itemM, p.id, _bTarget.x, _bTarget.y);
                             }
@@ -4739,7 +4739,7 @@ public class Zone {
                                     }
                                 }
                             } else if(_bTarget._typeBoss == (byte)49 || _bTarget._typeBoss == (byte)50) {//billwhis rot ruong
-                                ItemMap itemM = newItemMAP(1055, p.id, _bTarget.x, _bTarget.y);
+                                ItemMap itemM = newItemMAP(15, p.id, _bTarget.x, _bTarget.y);
                                 if(itemM != null) {
                                     addItemToMap(itemM, p.id, _bTarget.x, _bTarget.y);
                                 }
@@ -7531,7 +7531,7 @@ public class Zone {
                                         } else if(bossMap.get(i)._typeBoss == 4 || bossMap.get(i)._typeBoss == 6) {
                                             Service.gI().sendThongBaoServer(player.name + " vừa tiêu diệt " + bossMap.get(i).name + " mọi người đều ngưỡng mộ");
                                             ItemMap item = dropItemGOD(player, bossMap.get(i).x, bossMap.get(i).y);
-
+                                            // 1
                                             //ADD ITEM TO MAP
                                             if(item != null) {
                                                 try {
@@ -7584,49 +7584,50 @@ public class Zone {
                                                     addItemToMap(itemM, player.id, bossMap.get(i).x, bossMap.get(i).y);
                                                 }
                                             }
-                                        } else if(bossMap.get(i)._typeBoss == (byte)49 || bossMap.get(i)._typeBoss == (byte)50) {//billwhis rot gang
+                                            //2
+                                        } else if(bossMap.get(i)._typeBoss == (byte)49 || bossMap.get(i)._typeBoss == (byte)50) {//billwhis roi 2s
                                             ItemMap itemM = newItemMAP(15, player.id, bossMap.get(i).x, bossMap.get(i).y);
                                             if(itemM != null) {
                                                 addItemToMap(itemM, player.id, bossMap.get(i).x, bossMap.get(i).y);
                                             }
                                         }
-//                                         else if(bossMap.get(i)._typeBoss >= (byte)44 || bossMap.get(i)._typeBoss <= (byte)47) {
-//                                            ItemMap itemM = cNewItemMap(590, player.id, bossMap.get(i).x, bossMap.get(i).y);
-//                                            addItemToMap(itemM, player.id, bossMap.get(i).x, bossMap.get(i).y);
-//                                        }
-//                                        else {
-//                                            int id = Util.nextInt(17,20);
-//
-//            //                                Item itemMap = ItemSell.getItem(id);
-//                                            Item itemMap = ItemSell.getItemNotSell(id);
-//                                            ItemMap item = new ItemMap();
-//                                            item.playerId = player.id;
-//                                            item.x = bossMap.get(i).x;
-//                                            item.y = bossMap.get(i).y;
-//                                            item.itemMapID = id;
-//                                            item.itemTemplateID = (short) item.itemMapID;
-//                                            itemMap.template = ItemTemplate.ItemTemplateID(id);
-//                                            item.item = itemMap;
-//                                            itemDrops.add(item);
-//                                            itemsMap.addAll(itemDrops);
-//                        //                }
-//                                            //đồng bộ boss chet, cho boss bien mat. add item map //68
-//                                            try {
-//                                                m = new Message(68);
-//                                                m.writer().writeShort(item.itemMapID);
-//                                                m.writer().writeShort(item.item.template.id);
-//                                                m.writer().writeShort(bossMap.get(i).x);
-//                                                m.writer().writeShort(bossMap.get(i).y);
-//                                                m.writer().writeInt(player.id);
-//                                                m.writer().flush();
-//                                                for(Player _pl: players) {
-//                                                    _pl.session.sendMessage(m);
-//                                                }
-//                                                m.cleanup();
-//                                            } catch (Exception e) {
-//                                                e.printStackTrace();
-//                                            }
-//                                        }
+                                         else if(bossMap.get(i)._typeBoss >= (byte)44 || bossMap.get(i)._typeBoss <= (byte)47) {
+                                            ItemMap itemM = cNewItemMap(590, player.id, bossMap.get(i).x, bossMap.get(i).y);
+                                            addItemToMap(itemM, player.id, bossMap.get(i).x, bossMap.get(i).y);
+                                        }
+                                        else {
+                                            int id = Util.nextInt(17,20);
+
+            //                                Item itemMap = ItemSell.getItem(id);
+                                            Item itemMap = ItemSell.getItemNotSell(id);
+                                            ItemMap item = new ItemMap();
+                                            item.playerId = player.id;
+                                            item.x = bossMap.get(i).x;
+                                            item.y = bossMap.get(i).y;
+                                            item.itemMapID = id;
+                                            item.itemTemplateID = (short) item.itemMapID;
+                                            itemMap.template = ItemTemplate.ItemTemplateID(id);
+                                            item.item = itemMap;
+                                            itemDrops.add(item);
+                                            itemsMap.addAll(itemDrops);
+                                        }
+                                            //đồng bộ boss chet, cho boss bien mat. add item map //68
+                                            try {
+                                                m = new Message(68);
+                                                m.writer().writeShort(item.itemMapID);
+                                                m.writer().writeShort(item.item.template.id);
+                                                m.writer().writeShort(bossMap.get(i).x);
+                                                m.writer().writeShort(bossMap.get(i).y);
+                                                m.writer().writeInt(player.id);
+                                                m.writer().flush();
+                                                for(Player _pl: players) {
+                                                    _pl.session.sendMessage(m);
+                                                }
+                                                m.cleanup();
+                                            } catch (Exception e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
                                     }
                                     if(bossMap.get(i)._typeBoss == 2 && player.havePet == 0) { //boss die la super broly
                                         player.detu = bossMap.get(i).detu;
@@ -11147,6 +11148,7 @@ public class Zone {
                                         timerZamasu.cancel();
                                     };
                                 };
+                                //3
                                 timerZamasu.schedule(ttZamasu, 1200000);
                             } else if((_BOSS._typeBoss == (byte)49 || _BOSS._typeBoss == (byte)50) && !isHoiSinhBill) {
                                 Boss Bill = getBossByID(-200529);
