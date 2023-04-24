@@ -357,16 +357,19 @@ public class DelayUseBomTask extends TimerTask {
                                                 player.zone.addItemToMap(itemM, player.id, bosses.get(i).x, bosses.get(i).y);
                                             }
                                         }
-                                    } else if(bosses.get(i)._typeBoss == (byte)49 || bosses.get(i)._typeBoss == (byte)50) {//billwhis rot ruong
-                                        ItemMap itemM = player.zone.newItemMAP(1055, player.id, bosses.get(i).x, bosses.get(i).y);
+                                    } else if(bosses.get(i)._typeBoss == (byte)49 || bosses.get(i)._typeBoss == (byte)50) {//billwhis roi 2s
+                                        ItemMap itemM = player.zone.newItemMAP(15, player.id, bosses.get(i).x, bosses.get(i).y);
+                                        if(itemM != null) {
+                                            player.zone.addItemToMap(itemM, player.id, bosses.get(i).x, bosses.get(i).y);
+                                        }
+                                    }else if(bosses.get(i)._typeBoss == (byte)5 || bosses.get(i)._typeBoss == (byte)6) {//black roi nhan
+                                        ItemMap itemM = player.zone.newItemMAP(992, player.id, bosses.get(i).x, bosses.get(i).y);
                                         if(itemM != null) {
                                             player.zone.addItemToMap(itemM, player.id, bosses.get(i).x, bosses.get(i).y);
                                         }
                                     }
-//                                    else if(bosses.get(i)._typeBoss >= (byte)44 || bosses.get(i)._typeBoss <= (byte)47) {
-//                                        ItemMap itemM = player.zone.cNewItemMap(590, player.id, bosses.get(i).x, bosses.get(i).y);
-//                                        player.zone.addItemToMap(itemM, player.id, bosses.get(i).x, bosses.get(i).y);
-//                                    }
+
+
                                 }
                                 if(bosses.get(i)._typeBoss == 2 && player.havePet == 0) { //boss die la super broly
                                     player.detu = bosses.get(i).detu;
