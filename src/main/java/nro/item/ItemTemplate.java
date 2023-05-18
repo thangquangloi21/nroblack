@@ -65,6 +65,7 @@ public class ItemTemplate {
         return put;
     }
     
+//    public static Item parseItem(String str) {
     public static Item parseItem(String str) {
         Item item = new Item();
         JSONObject job = (JSONObject) JSONValue.parse(str);
